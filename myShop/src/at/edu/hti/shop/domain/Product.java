@@ -30,4 +30,8 @@ public class Product {
 		return "Product [" + name + ", " + id + ", " + prize + "]";
 	}
 
+	public double getSingleItemWeight() {
+		return 0;
+	}
+
 }

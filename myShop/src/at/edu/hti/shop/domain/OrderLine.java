@@ -31,4 +31,8 @@ public class OrderLine {
 		return "OrderLine [" + product + ", " + amount + "]";
 	}
 
+	public double getWeight() {
+		return (product.getSingleItemWeight() * getAmount());
+	}
+
 }

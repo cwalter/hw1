@@ -1,0 +1,5 @@
+J: Produktattribute erweitern, Lieferzeit, Gewicht und Produkttypen/Kategorien überlegen und wie sie in die struktur passen
+
+C: Versandspesenrechnung (Specification Pattern) und Flag in Order für "Bestellung nicht aufteilen"
+
+OPEN: Order Split Strategien (Maximalgewicht, Produktgruppen, Lieferzeit)

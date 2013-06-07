@@ -6,16 +6,17 @@ import java.util.List;
 public class Order {
 
 	private IPriceStrategy pricing = new BestPrice();
-	private List<OrderLine> lines = new ArrayList<>(); //FIXME hash map would be better
-	
+	private List<OrderLine> lines = new ArrayList<>(); // FIXME hash map would
+														// be better
+
 	public Order() {
 		pricing = new BestPrice();
 	}
-	
+
 	public Order(IPriceStrategy strategy) {
 		pricing = strategy;
 	}
-	
+
 	public void setStrategy(IPriceStrategy pricingStrategy) {
 		pricing = pricingStrategy;
 	}
@@ -58,5 +59,17 @@ public class Order {
 		}
 		buffer.append("===================\n").append(calcPrize());
 		return buffer.toString();
+	}
+
+	public double getSumWeight() {
+		double weight = 0.0;
+		for (OrderLine ol : lines) {
+			weight += ol.getWeight();
+		}
+		return weight;
+	}
+
+	public List<OrderLine> getLines() {
+		return lines;
 	}
 }
