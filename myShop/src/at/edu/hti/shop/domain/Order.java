@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Order {
 
+	private int id = 0;
 	private IPriceStrategy pricing = new BestPrice();
 	private List<OrderLine> lines = new ArrayList<>(); // FIXME hash map would
 														// be better
@@ -17,6 +18,13 @@ public class Order {
 		pricing = strategy;
 	}
 
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
 	public void setStrategy(IPriceStrategy pricingStrategy) {
 		pricing = pricingStrategy;
 	}

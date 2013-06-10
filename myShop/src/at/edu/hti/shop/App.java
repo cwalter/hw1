@@ -1,9 +1,14 @@
 package at.edu.hti.shop;
 
+import java.util.List;
+
 import at.edu.hti.shop.domain.Order;
 import at.edu.hti.shop.domain.OrderLine;
 import at.edu.hti.shop.domain.PricingFactory;
 import at.edu.hti.shop.domain.Product;
+import at.edu.hti.shop.packaging.IPackage;
+import at.edu.hti.shop.packaging.PackageFactory;
+import at.edu.hti.shop.spec.impl.WeightSpecification;
 
 public class App {
 	public static void main(String[] args) {
@@ -50,5 +55,10 @@ public class App {
 
 		// System.out.println(shopOrder.size());
 		System.out.println(shopOrder);
+		
+		List<IPackage> packages = PackageFactory.getPackages(shopOrder, new WeightSpecification(10));
+		for (IPackage p : packages) {
+			System.err.println("Got Package> " + p);
+		}
 	}
 }

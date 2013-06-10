@@ -3,7 +3,8 @@ package at.edu.hti.shop.domain;
 public class OrderLine {
 	private Product product;
 	private int amount;
-
+	private int id;
+	
 	public OrderLine(Product product, int amount) {
 		super();
 		this.product = product;
@@ -33,6 +34,14 @@ public class OrderLine {
 
 	public double getWeight() {
 		return (product.getSingleItemWeight() * getAmount());
+	}
+
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }

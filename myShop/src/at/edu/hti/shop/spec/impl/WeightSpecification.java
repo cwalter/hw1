@@ -1,9 +1,9 @@
 package at.edu.hti.shop.spec.impl;
 
-import at.edu.hti.shop.domain.Order;
+import at.edu.hti.shop.packaging.IPackage;
 import at.edu.hti.shop.spec.AbstractSpecification;
 
-public class WeightSpecification extends AbstractSpecification<Order> {
+public class WeightSpecification extends AbstractSpecification<IPackage> {
 
 	private final double maxWeight;
 
@@ -12,8 +12,12 @@ public class WeightSpecification extends AbstractSpecification<Order> {
 	}
 
 	@Override
-	public boolean isSatisfiedBy(Order o) {
-		return (o.getSumWeight() <= maxWeight) ;
+	public boolean isSatisfiedBy(IPackage o) {
+		return (o.getWeight() <= maxWeight) ;
 	}
+	
+	
+	
+	
 
 }
